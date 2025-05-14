@@ -2,6 +2,12 @@
 
 This is a full-stack web application I developed to provide a straightforward way for users to track their personal expenses. The project uses a MERN-like stack, substituting MongoDB with MySQL and Sequelize ORM, and features JWT for secure authentication.
 
+## Development Time & Process
+- **Total Hours:** 8 (over 2 days).
+- **Process:**
+  - Original system design.
+  - AI-assisted MERN stack coding (due to unfamiliarity).
+
 ## Features
 
 -   **User Authentication:** Secure user registration and login using JWT (JSON Web Tokens). Passwords are securely hashed using bcrypt.
