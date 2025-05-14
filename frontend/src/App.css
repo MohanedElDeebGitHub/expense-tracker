@@ -1,0 +1,477 @@
+/* At the very top of the file, or modify existing body styles */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
+    'Droid Sans', 'Helvetica Neue', sans-serif; /* More comprehensive font stack */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #eef1f5; /* Slightly softer background */
+  color: #333a40; /* Darker grey for better readability */
+  line-height: 1.6; /* Improved line spacing for text */
+}
+
+/* Modify .App and .container for better spacing and centering */
+.App {
+  text-align: left; /* Change from center for more typical app layout */
+}
+
+.container {
+  max-width: 1200px; /* Slightly wider for modern screens */
+  margin: 20px auto; /* Add top/bottom margin */
+  overflow: visible; /* Allow box shadows to be fully visible */
+  padding: 0 25px; /* Consistent padding */
+}
+
+/* General card styling for sections (can be applied to .dashboard-section) */
+.card {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Softer shadow */
+  padding: 25px;
+  margin-bottom: 25px;
+}
+
+.dashboard-section {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  padding: 25px;
+  margin-bottom: 25px;
+}
+
+.dashboard-section h2, .dashboard-section h3 {
+  color: #2c3e50;
+  margin-top: 0;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ecf0f1;
+  margin-bottom: 20px;
+}
+
+/* Button styling consistency */
+button, .btn {
+  background-color: #3498db;
+  border: none;
+  color: white;
+  padding: 10px 18px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1rem;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+button:hover, .btn:hover {
+  background-color: #2980b9;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+button:disabled, .btn:disabled {
+  background-color: #bdc3c7;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* Specific button overrides */
+.expense-form button[type="submit"] { background-color: #2ecc71; }
+.expense-form button[type="submit"]:hover { background-color: #27ae60; }
+.expense-form .cancel-button { background-color: #95a5a6; }
+.expense-form .cancel-button:hover { background-color: #7f8c8d; }
+
+.expense-actions .edit-btn { background-color: #f39c12; }
+.expense-actions .edit-btn:hover { background-color: #e67e22; }
+.expense-actions .delete-btn { background-color: #e74c3c; }
+.expense-actions .delete-btn:hover { background-color: #c0392b; }
+
+.filter-form button[type="submit"] { background-color: #3498db; }
+.filter-form button[type="submit"]:hover { background-color: #2980b9; }
+.filter-form .clear-filters-btn { background-color: #7f8c8d; }
+.filter-form .clear-filters-btn:hover { background-color: #6c7a7d; }
+
+.add-new-expense-btn { background-color: #1abc9c; }
+.add-new-expense-btn:hover { background-color: #16a085; }
+
+
+/* Input field enhancements */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="date"],
+textarea,
+select {
+  width: calc(100% - 24px); /* Full width minus padding */
+  padding: 12px;
+  margin-bottom: 12px; /* Default margin for standalone inputs */
+  border: 1px solid #dce4ec;
+  border-radius: 5px;
+  box-sizing: border-box;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  font-size: 0.95rem;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="number"]:focus,
+input[type="date"]:focus,
+textarea:focus,
+select:focus {
+  border-color: #3498db;
+  box-shadow: 0 0 0 0.2rem rgba(52, 152, 219, 0.25);
+  outline: none;
+}
+
+/* Error and Success Messages */
+.error-message {
+  color: #c0392b;
+  background-color: #fadbd8;
+  border: 1px solid #f1c6c2;
+  padding: 12px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.success-message {
+  color: #27ae60;
+  background-color: #d4efdf;
+  border: 1px solid #bdedc8;
+  padding: 12px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 15px;
+  }
+  .navbar-container {
+    padding: 0 15px;
+  }
+  .expense-item, .filter-form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .expense-details, .expense-actions {
+    width: 100%;
+    margin-left: 0;
+    margin-top: 10px;
+    justify-content: flex-start;
+  }
+  .expense-amount {
+    margin-left: 0;
+    padding-left: 0;
+    text-align: left;
+    width: 100%;
+    margin-top: 5px;
+  }
+  .filter-group {
+    flex-basis: 100%;
+  }
+  .filter-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .filter-actions button {
+    width: 100%;
+  }
+}
+
+/* Homepage link specific styling */
+.home-link {
+  color: #3498db;
+  text-decoration: none;
+  font-weight: 500;
+}
+.home-link:hover {
+  text-decoration: underline;
+  color: #2980b9;
+}
+
+/* Navbar CSS */
+.navbar {
+  background: #2c3e50; /* Darker, more professional blue-grey */
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.1rem;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  color: #ecf0f1; /* Light text for dark navbar */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  height: 70px;
+  z-index: 1;
+  width: 100%;
+  max-width: 1200px; /* Match container width */
+  margin: 0 auto;
+  padding: 0 25px; /* Match container padding */
+}
+.navbar-logo {
+  color: #ecf0f1;
+  justify-self: start;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+}
+.navbar-logo:hover {
+  color: #ffffff;
+}
+.nav-menu {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  text-align: center;
+}
+.nav-item {
+  height: 70px;
+  display: flex;
+  align-items: center;
+}
+.nav-links {
+  color: #ecf0f1;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  height: 100%;
+  transition: all 0.2s ease-out;
+  border-radius: 4px; /* For background hover effect */
+}
+.nav-links:hover {
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.nav-links-user {
+  color: #ecf0f1;
+  padding: 0.5rem 1rem;
+  margin-right: 10px;
+}
+.nav-button-logout {
+  background-color: transparent;
+  color: #ecf0f1;
+  border: 1px solid #ecf0f1;
+  padding: 8px 15px; /* Adjusted padding */
+  border-radius: 5px; /* Consistent with global button */
+  cursor: pointer;
+  font-size: 1rem; /* Consistent with global button */
+  margin-left: 10px;
+  transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+.nav-button-logout:hover {
+  background-color: #e74c3c;
+  border-color: #e74c3c;
+  color: white;
+}
+
+/* Expense Form Styles (from previous steps, ensure they are consistent) */
+.expense-form {
+  /* Uses .card styling or .dashboard-section styling */
+  margin-bottom: 30px; /* Spacing if shown above list */
+}
+.expense-form h3 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #2c3e50;
+}
+/* .expense-form div { margin-bottom: 15px; } -- Handled by input margin or flex gap */
+.expense-form label {
+  display: block;
+  margin-bottom: 5px; /* Space between label and input */
+  font-weight: 500;
+}
+.expense-form .form-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+/* Expense List Styles */
+.expense-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.expense-item {
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  padding: 15px 20px;
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.07);
+  flex-wrap: wrap;
+}
+.expense-details {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+.expense-date {
+  font-size: 0.9em;
+  color: #555;
+  min-width: 90px;
+}
+.expense-category {
+  font-weight: 600;
+  color: #333;
+  background-color: #e9ecef;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+.expense-amount {
+  font-size: 1.1em;
+  font-weight: bold;
+  color: #28a745;
+  margin-left: auto;
+  padding-left: 10px;
+}
+.expense-description {
+  font-size: 0.9em;
+  color: #777;
+  margin-top: 5px;
+  width: 100%;
+  flex-basis: 100%;
+}
+.expense-actions {
+  display: flex;
+  gap: 8px;
+  margin-left: 15px;
+}
+.expense-actions button {
+  padding: 6px 12px;
+  font-size: 0.9em;
+}
+
+/* ExpenseFilter Styles - REVISED */
+.filter-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  margin-bottom: 25px;
+  align-items: flex-end;
+}
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 180px;
+  flex-grow: 1;
+}
+.filter-group.filter-group-separator {
+  flex-basis: 100%;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #555;
+}
+.filter-form label {
+  font-size: 0.9em;
+  color: #333;
+  font-weight: 500;
+  margin-bottom: 0;
+}
+.filter-form input[type="date"],
+.filter-form select {
+  /* Uses global input styling */
+  margin-bottom: 0; /* Override default input margin as flex gap handles it */
+}
+.filter-actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-top: 10px; /* Or align with other items if not full width */
+}
+
+/* MonthlyReport Styles */
+.monthly-report {
+  margin-top: 20px;
+  padding: 20px; /* Consistent padding */
+  background-color: #fff; /* Consistent with card */
+  border: 1px solid #e0e0e0; /* Consistent with card */
+  border-radius: 8px; /* Consistent with card */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Consistent with card */
+}
+.monthly-report h4 {
+  margin-top: 0;
+  color: #2c3e50; /* Consistent heading */
+  border-bottom: 1px solid #ecf0f1; /* Consistent heading */
+  padding-bottom: 8px;
+  margin-bottom: 15px; /* More space after heading */
+}
+.monthly-report h5 {
+  margin-top: 15px;
+  margin-bottom: 8px;
+  color: #34495e; /* Slightly different heading color */
+}
+.monthly-report p {
+  margin-bottom: 8px;
+}
+.monthly-report ul {
+  list-style: disc;
+  margin-left: 20px;
+  padding-left: 0;
+}
+.monthly-report li {
+  margin-bottom: 5px;
+  font-size: 0.95em;
+}
+
+/* Auth Form specific styling if needed, or rely on global form/input/button */
+.auth-form {
+  /* Uses .card styling or specific styles if defined */
+  max-width: 450px; /* Slightly wider auth form */
+  margin: 40px auto; /* Center it */
+}
+.auth-form h2 {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 25px;
+}
+.auth-form div { /* Spacing for label-input groups */
+  margin-bottom: 15px;
+}
+.auth-form label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #555;
+}
+/* Inputs and buttons in auth-form will inherit global styles */
+.form-switch-text {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 0.9em;
+}
+.form-switch-text a {
+  color: #3498db; 
+  text-decoration: none;
+}
+.form-switch-text a:hover {
+  text-decoration: underline;
+}
+
